@@ -1,11 +1,4 @@
-BanglaConnect— A Global Hub for Bangladeshi Talent, Jobs, Blogs, News & Entertainment
-
-Stuttgart, Germany — June 17, 2026
-
-The digital platform BanglaConnect has introducing a unified ecosystem designed to connect Bangladeshi students, mentors, and professionals across the world. The platform aims to go beyond traditional networking by combining career growth, mentorship, information sharing, and community engagement in one place.
-
-BanglaConnect is built to serve as a global bridge for Bangladeshi talent, enabling users to build meaningful professional relationships while accessing opportunities tailored to their skills and goals.
-
+BanglaConnect— Developing a global hub for Bangladeshi talent to connect mentors and get Support
 At its core, the platform offers a structured role-based system where:
 
 Students can seek guidance and mentorship
