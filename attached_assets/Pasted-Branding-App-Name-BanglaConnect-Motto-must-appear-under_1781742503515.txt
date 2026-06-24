@@ -1,0 +1,165 @@
+Branding
+App Name:
+
+BanglaConnect
+
+Motto (must appear under logo / homepage header):
+
+“When people connect, opportunities multiply.”
+
+🎯 Core Vision
+
+Build a trusted digital ecosystem where users can:
+
+connect with mentors and professionals
+discover job opportunities
+share knowledge through blogs/news
+participate in events and live sessions
+build personal identity through a creative workspace (Vault)
+🧱 SYSTEM IMPROVEMENTS (IMPORTANT FIXES)
+1. Authentication Alignment Fix
+Ensure Supabase Auth is the single source of truth
+Sync auth.users.id with profiles.id
+Remove duplicate or mismatched user identity logic
+Ensure signup flow always:
+creates auth user
+creates profile row
+redirects only after session is confirmed
+2. Role System Correction
+roles:
+student
+mentor
+professional
+admin
+mentor approval system:
+New mentors → mentor_status = "pending"
+Admin approval required → "approved"
+Only approved mentors visible in search & listings
+🚀 CORE FEATURES
+1. 👤 User System
+Signup / login (email + Google)
+Profile management
+Role-based dashboards
+Country + profession metadata
+2. 🧑‍🏫 Mentorship System
+Mentors create profiles with specialties
+Students can browse mentors
+Booking or contact option
+Admin approval system for mentors
+3. 💼 Jobs Board
+Create / apply for jobs
+Job categories + tags
+Filter by location, type, skills
+Employer profile linking
+4. 📰 Blogs & News System
+Users can post blogs/news
+Rich text + file upload support
+Categories (tech, career, education, etc.)
+Engagement system (likes/views optional later)
+5. 📅 Events System
+Create and join events
+Event categories
+RSVP system
+Event detail pages
+6. 🎥 Live Streaming (Events Enhancement)
+Events can be marked as LIVE
+Stream URL support (YouTube/RTMP/embed)
+Live status indicator
+“Join Live” button
+7. 💬 Personal Chat System
+One-to-one messaging between users
+Conversation-based structure
+Real-time messaging (Supabase Realtime preferred)
+Chat UI:
+conversation list
+message window
+8. 🛠️ Support System
+Support form for users:
+subject
+description
+optional attachments
+Stored in support_tickets
+Admin inbox dashboard
+Ticket status tracking:
+open
+in_progress
+resolved
+9. 🧑‍💻 Vault (Personal Workspace) ⭐ NEW KEY FEATURE
+
+Each user gets a personal space called:
+
+“Vault”
+
+A flexible digital workspace where users can:
+
+showcase projects
+store ideas
+upload creative work
+share portfolio items
+write private or public posts
+Features:
+visibility control:
+public
+private
+file uploads (images, PDFs, videos)
+structured items (title + description + attachments)
+Database:
+
+vault_items
+
+10. 🗂 File Upload System
+Supabase Storage integration
+Buckets:
+post-files
+vault-files
+Used in:
+blogs
+jobs
+events
+vault
+🧑‍💼 ADMIN SYSTEM
+Admin Dashboard includes:
+Mentor approval queue
+Support ticket inbox
+User management
+Content moderation (optional future)
+🔐 SECURITY & RULES
+Only authenticated users can create content
+Only admin can approve mentors
+Vault privacy must be enforced at query level
+Supabase Row Level Security (RLS) must be enabled
+📡 REAL-TIME FEATURES
+
+Use Supabase realtime for:
+
+chat messages
+notifications (future)
+live event updates
+🧭 NAVIGATION STRUCTURE
+
+Add main routes:
+
+/dashboard
+/mentors
+/jobs
+/events
+/blogs
+/chat
+/vault
+/support
+/admin
+🚀 PRIORITY BUILD ORDER (IMPORTANT)
+Phase 1 (MVP - MUST WORK FIRST)
+Auth system fix
+Profiles + roles
+Jobs
+Mentors (basic + approval)
+Simple UI
+Phase 2
+Chat system
+Blogs + file upload
+Events system
+Phase 3
+Vault system
+Support system
+Live streaming

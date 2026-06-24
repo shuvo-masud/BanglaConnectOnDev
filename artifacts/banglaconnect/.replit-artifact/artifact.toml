@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "BanglaConnect"
+version = "1.0.0"
+id = "artifacts/banglaconnect"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20724
+
+[services.development]
+run = "pnpm --filter @workspace/banglaconnect run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/banglaconnect", "run", "build" ]
+publicDir = "artifacts/banglaconnect/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20724"
+BASE_PATH = "/"

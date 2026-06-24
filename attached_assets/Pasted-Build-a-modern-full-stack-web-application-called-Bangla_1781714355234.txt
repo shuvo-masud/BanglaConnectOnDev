@@ -1,0 +1,122 @@
+Build a modern full-stack web application called “BanglaConnect”.
+
+🌍 Concept
+
+BanglaConnect is a global networking platform for Bangladeshi students, mentors, and professionals living around the world. It helps users connect, learn, find mentors, and grow professionally.
+
+👥 User Roles
+
+The system has 3 user types:
+
+1. Student
+Can browse mentors and professionals
+Can view profiles
+Can connect and request guidance
+Can edit their profile (skills, interests, education, location)
+2. Mentor
+Can offer mentorship
+Must select specialties (e.g., AI, Web Dev, Career Guidance, etc.)
+Can toggle availability (available/unavailable)
+Has public profile visible to students
+3. Professional
+Can showcase profession and experience
+Can network with others
+Can update professional field and skills
+🔐 Authentication System
+
+Use Supabase Auth (or equivalent backend):
+
+Email/password signup
+Google OAuth login
+Session persistence
+Secure logout
+Auto profile creation on signup
+
+After signup, each user must have a row in profiles table.
+
+🗄️ Database Structure (Supabase/Postgres)
+profiles table:
+id (uuid, matches auth.users.id)
+full_name (text)
+role (student | mentor | professional)
+bio (text)
+country (text)
+city (text)
+skills (text array)
+interests (text array)
+professional_field (text)
+profession (text, optional)
+specialties (text array, only mentors)
+mentor_available (boolean, default false)
+avatar_url (text)
+created_at (timestamp)
+🧭 Pages / Routes
+1. Landing Page (/)
+Simple intro about BanglaConnect
+Login / Signup buttons
+2. Signup Page (/signup)
+Role selection (student / mentor / professional)
+Full name, email, password
+Country selection
+Conditional fields:
+Mentor → specialties selection
+Professional → profession dropdown
+After signup → redirect to /dashboard
+3. Login Page (/login)
+Email/password login
+Google login option
+4. Dashboard (/dashboard)
+Personalized welcome
+Quick access to mentors
+User summary card
+5. Mentors Page (/mentors)
+List all mentors
+Filter by specialty, country, availability
+Click to view profile
+6. Profile Page (/profile)
+View and edit own profile
+Editable fields:
+Name, bio, location
+skills/interests
+role-specific fields
+Save updates to database
+🧩 Layout System
+Left sidebar (desktop):
+Logo: BanglaConnect
+Navigation:
+Dashboard
+Mentors
+Profile
+User profile preview
+Logout button
+Mobile:
+Top navbar with hamburger menu
+Slide-out sidebar
+⚙️ Core Features
+Authentication Flow
+Auto detect session
+Redirect logged-in users to dashboard
+Prevent unauthenticated access to protected pages
+Profile System
+Profile is auto-created after signup
+Profile updates sync with Supabase in real time
+State Management
+Use React Context for auth state:
+user
+profile
+loading state
+refreshProfile()
+🎨 UI Style
+Modern SaaS style
+Clean TailwindCSS design
+Colors:
+Primary: teal / emerald
+Background: light gray / white
+Responsive design (mobile-first)
+Smooth transitions and hover effects
+⚠️ Important Rules
+Always ensure profiles.id = auth.users.id
+Never assume profile exists → create if missing
+Handle loading states properly (no infinite spinner)
+Always handle Supabase errors
+Keep role-based fields conditional
