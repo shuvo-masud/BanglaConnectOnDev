@@ -1,9 +1,10 @@
 BanglaConnect— Developing a global hub for Bangladeshi talent to connect mentors and get Support
 At its core, the platform offers a structured role-based system where:
 
-Students can seek guidance and mentorship
-Mentors can offer expertise and career support
+Students can seek guidance and mentorship,
+Mentors can offer expertise and career support,
 Professionals can expand their global network and showcase experience
+
 
 In addition to its networking features, BanglaConnect introduces several content and opportunity-driven sections:
 
